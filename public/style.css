@@ -1,0 +1,350 @@
+html, body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #efede8;
+}
+
+tr{
+
+	font-family: sans-serif;
+
+}
+
+/* This makes absolutely positioned elements like p, h1,
+     and some bootstrap elements placed properly. */
+ body>p, body>h1, body>h2, body>h3, body>h4, body>h5, body>h6 {
+  margin-top: 0 !important;
+}
+/* Set floating body text margins to 0 */
+[class*="dom-body-text"] p {
+  margin: 0 0 10px 0;
+}
+.btn.btn-1 {
+  background-image: none;
+  background-color: #ff0000;
+  border: none;
+  font-family: oswald;
+  font-size: 20pt;
+  color: #ffffff;
+  border-radius: 3px;
+  padding: 20px;
+  width: 100%;
+}
+.btn.btn-2 {
+  background-image: none;
+  background-color: #68bea7;
+  border: none;
+  font-family: oswald;
+  color: #ffffff;
+  border-radius: 3px;
+  width: 220px;
+  height: 35px;
+  position: absolute;
+  top: 32px;
+  left: 132px;
+}
+.btn.btn-3 {
+  background-image: -moz-linear-gradient(270deg, #68bea7 0%, #37a394 100%);
+  background-image: -webkit-linear-gradient(270deg, #68bea7 0%, #37a394 100%);
+  background-image: -o-linear-gradient(270deg, #68bea7 0%, #37a394 100%);
+  background-image: linear-gradient(180deg, #68bea7 0%, #37a394 100%);
+  background-color: #68bea7;
+  border: none;
+  font-family: oswald;
+  color: #ffffff;
+  border-radius: 20px;
+  width: 220px;
+  height: 35px;
+  -moz-box-shadow: #335249 0px 2px 2px 0px;
+  -webkit-box-shadow: #335249 0px 2px 2px 0px;
+  -o-box-shadow: #335249 0px 2px 2px 0px;
+  box-shadow: #335249 0px 2px 2px 0px;
+  position: absolute;
+  top: 99px;
+  left: 135px;
+}
+.btn.btn-4 {
+  background-image: none;
+  background-color: #68bea7;
+  border: 1px solid #3b635f;
+  font-family: oswald;
+  color: #ffffff;
+  border-radius: 3px;
+  width: 220px;
+  height: 35px;
+  -moz-box-shadow: rgba(255, 255, 255, 0.490196) 0px 0px 15px 0px inset, #346155 0px 9px 0px 0px, rgba(0, 0, 0, 0.6) 0px 10px 4px 0px;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.490196) 0px 0px 15px 0px inset, #346155 0px 9px 0px 0px, rgba(0, 0, 0, 0.6) 0px 10px 4px 0px;
+  -o-box-shadow: rgba(255, 255, 255, 0.490196) 0px 0px 15px 0px inset, #346155 0px 9px 0px 0px, rgba(0, 0, 0, 0.6) 0px 10px 4px 0px;
+  box-shadow: rgba(255, 255, 255, 0.490196) 0px 0px 15px 0px inset, #346155 0px 9px 0px 0px, rgba(0, 0, 0, 0.6) 0px 10px 4px 0px;
+  position: absolute;
+  top: 166px;
+  left: 135px;
+}
+.container .row-fluid .span6 .heading.heading-3 {
+  font-family: oswald;
+  font-weight: 400;
+}
+.container .row-fluid .span6 .well form .control-group .control-label.control-label-1 {
+  font-family: proxima-nova;
+}
+.container .row-fluid .span6 .well.well-1 {
+  padding: 25px 19px 5px;
+}
+.container .row-fluid .span6 p.p-1 {
+  font-family:'droid sans';
+  font-size: 12pt;
+  line-height: 1.6;
+}
+.container .row-fluid .span6.span6-1 {
+  padding: 10px 0px 0px;
+}
+.container .row-fluid .span6.span6-3 {
+  padding: 33px 0px 0px;
+}
+.container .row-fluid.row-fluid-1 {
+  padding: 40px 0px 30px;
+}
+.container-fluid .container .row-fluid .span6 .heading.heading-8 {
+  font-family: oswald;
+  font-weight: 400;
+}
+.container-fluid .container .row-fluid .span6 .well .heading.heading-7 {
+  font-family: oswald;
+  font-weight: 300;
+  font-size: 15pt;
+  color: #474747;
+}
+.container-fluid .container .row-fluid .span6 .well p.p-7 {
+  font-family:'droid sans';
+}
+.container-fluid .container .row-fluid .span6 p.p-8 {
+  font-family:'droid sans';
+  font-size: 12pt;
+  line-height: 1.6;
+}
+.container-fluid .container .row-fluid .span6.span6-2 {
+  padding: 40px 0px 0px;
+}
+.container-fluid.container-fluid-1 {
+  background-image: none;
+  background-color: #f5faff;
+  border: 1px solid #dedcd7;
+}
+.container-fluid.container-fluid-2 {
+  background-image: none;
+  padding: 20px;
+  background-color: #363738;
+}
+.container.container-1 {
+  padding: 40px 0px 30px;
+  margin-top: 1045px;
+}
+.dom-body-text p.p-2 {
+  font-family:'droid sans';
+  font-size: 40pt;
+  text-align: center;
+  line-height: 1.6;
+  font-weight: 800;
+  color: #bf001c;
+}
+.dom-body-text p.p-3 {
+  font-family:'droid sans';
+  font-size: 12pt;
+  line-height: 1.6;
+}
+.dom-body-text p.p-4 {
+  font-family:'droid sans';
+  font-size: 12pt;
+  line-height: 1.6;
+}
+.dom-body-text p.p-5 {
+  font-family:'droid sans';
+  font-size: 12pt;
+  line-height: 1.6;
+}
+.dom-body-text p.p-6 {
+  font-family:'droid sans';
+  font-size: 12pt;
+  line-height: 1.6;
+}
+.dom-body-text.dom-body-text-1 {
+  width: 940px;
+  height: 67px;
+  position: absolute;
+  top: 107px;
+  left: 48px;
+}
+.dom-body-text.dom-body-text-2 {
+  width: 460px;
+  height: 139px;
+  position: absolute;
+  top: 521px;
+  left: 55px;
+}
+.dom-body-text.dom-body-text-3 {
+  width: 460px;
+  height: 148px;
+  position: absolute;
+  top: 120px;
+  left: 559px;
+}
+.topbar {
+  font-family: oswald;
+  font-weight: 400;
+  font-size: 17pt;
+  color: white;
+  margin-left: 20px;
+}
+
+.padded {
+	padding-top: 40px;
+	padding-bottom: 20px;
+}
+
+.spaced {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.name {
+  font-family: oswald;
+  font-weight: 800;
+  font-size: 32pt;
+  color: #c00;
+  text-align: center;
+  margin-top: 20px;
+}
+.title {
+  font-family: oswald;
+  font-weight: 400;
+  font-size: 40pt;
+  color: black;
+  text-align: center;
+}
+.instruction {
+  font-family: oswald;
+  font-weight: 100;
+  color: black;
+  font-size: 15pt;
+  text-align:center;
+  a:visited,a:link{
+		color:#666;
+		font-weight:bold;
+  		text-decoration:none;
+	}
+}
+.heading.heading-5 {
+  font-family: oswald;
+  font-weight: 400;
+  width: 300px;
+  height: 42px;
+  position: absolute;
+  top: 466px;
+  left: 55px;
+}
+.heading.heading-6 {
+  font-family: oswald;
+  font-weight: 400;
+  width: 300px;
+  height: 42px;
+  position: absolute;
+  top: 64px;
+  left: 559px;
+}
+.loginbar {
+  width: 300px;
+  height: 60px;
+  font-size: 20pt;
+}
+.well.well-2 {
+  position: absolute;
+  top: 443px;
+  left: 535px;
+}
+.rectangle {
+  background: rgba(255, 255, 255, 0.73);
+  border: none;
+  border-radius: 0px 0px 2px 2px;
+  margin: 0px;
+  width: 1057px;
+  height: 63px;
+  position: absolute;
+  top: -5px;
+  left: 0px;
+}
+.rectangle-1 {
+  background: #c90028;
+  border: none;
+  -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 0px 0px 2px 2px;
+  margin: 0px;
+  width: 58px;
+  height: 66px;
+  position: absolute;
+  top: -2px;
+  left: 52px;
+}
+.container .row-fluid .span6 .row-fluid {
+  margin: 20px 0px 0px;
+}
+.container .row-fluid .span6 .well .form-actions {
+  padding: 19px 20px 0px;
+}
+.container .row-fluid .span6 .well form .control-group .controls .checkbox {
+  font-family: proxima-nova;
+}
+.container .row-fluid .span6 .well form .control-group .controls select {
+  width: 247px;
+}
+.rectangle-2 {
+  background: #bf000d;
+  border: none;
+  margin: 0px;
+  width: 1112px;
+  height: 183px;
+  position: absolute;
+  top: 228px;
+  left: -47px;
+}
+.rectangle-3 {
+  background: #f5faff;
+  border: 1px solid #dedcd7;
+  margin: 0px;
+  width: 1078px;
+  height: 323px;
+  position: absolute;
+  top: 720px;
+  left: -24px;
+}
+.rectangle-4 {
+  background: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  margin: 0px;
+  width: 468px;
+  height: 240px;
+  position: absolute;
+  top: 41px;
+  left: 69px;
+}
+.container-fluid .container {
+  padding: 40px 0px 30px;
+}
+.container .row-fluid .span6 .well .image {
+  border-radius: 2px;
+}
+.container-fluid .row-fluid .span12 .image-1 {
+  opacity: 0.2;
+}
+.container-fluid .row-fluid .span12 p {
+  padding: 10px 0px 0px;
+  font-family:'droid sans';
+  color: #ffffff;
+}
+.redbar{
+	background-color: red;
+	width: 100%;
+}
