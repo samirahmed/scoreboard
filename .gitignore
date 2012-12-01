@@ -56,3 +56,4 @@ tmp
 .yardoc
 _yardoc
 doc/
+*.swp
