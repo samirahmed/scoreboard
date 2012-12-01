@@ -127,7 +127,7 @@ tr{
 }
 .container-fluid.container-fluid-1 {
   background-image: none;
-  background-color: #f5faff;
+  background-color: #f3f3f3;
   border: 1px solid #dedcd7;
 }
 .container-fluid.container-fluid-2 {
@@ -225,7 +225,7 @@ tr{
   font-family: oswald;
   font-weight: 100;
   color: black;
-  font-size: 15pt;
+  font-size: 32px;
   text-align:center;
   a:visited,a:link{
 		color:#666;
@@ -347,4 +347,34 @@ tr{
 .redbar{
 	background-color: red;
 	width: 100%;
+}
+
+.challenge{
+	font-family: 'droid sans';
+}
+
+.challenge p{
+		max-width:800px;
+		font-size: 18px;
+		font-style: italic;
+		color: #666;
+		margin:20px 0;
+}
+
+.challenge li{
+		max-width:800px;
+		font-size: 18px;
+		margin-top:10px;
+		margin-bottom:10px;
+}
+
+.challenge blockquote{
+		font-size: 20px;
+		margin: 20px 0;
+		color: maroon;
+		border-left: 15px solid #EE6E6E;
+}
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover{
+	background-color: #c4c4c4;
 }
