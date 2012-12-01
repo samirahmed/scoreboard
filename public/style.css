@@ -130,6 +130,12 @@ tr{
   background-color: #f3f3f3;
   border: 1px solid #dedcd7;
 }
+.container-fluid.container-fluid-3 {
+  background-image: none;
+  padding: 50px 140px;
+  background-color: #F7F7F7;
+  font-family:'droid sans';
+}
 .container-fluid.container-fluid-2 {
   background-image: none;
   padding: 20px;

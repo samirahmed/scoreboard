@@ -87,9 +87,6 @@
            <li class>
               <a href="#server_side_include" class="instruction" data-toggle="tab">Server Side File Include</a>
             </li>
-           <li class>
-            <a href="#board" class="instruction" data-toggle="tab">Scoreboard</a>
-           </li>
          </ul>
            <div id="myTabContent" class="tab-content">
             <div class="tab-pane fade active in challenge" id="hidden_files">
@@ -97,11 +94,11 @@
              <p>Sometimes there are pages that admins do not want spiders to be able to visit. They keep theses in a robots.txt file. W3AF has a robotsReader plugin that will reveal the location of these files for us. 
 			 </p>
 			 <ul>
-			 <li>Point W3AF to the page <em>http://vulnerable</em></li>
+			 <li>Point W3AF to the page <a href="http://ec521.raxcity.com">http://ec521.raxcity.com/</a></li>
 			 <li>Enable the <em>robotsReader</em> plugin in the 'discovery'</li>
 			 <li>After running, look at the <em>Results</em> page, there should be a hit for <em>robotsReader</em> 
 			 </li>
-			 <li>Look at the robots.txt file and find what is listed after Disallow. This is a directory that invisible to the spiders. The admin however, forgot to hide this directory from the public so point your browser to <em>http://vulnerable/[invisible directory name].</em></li>
+			 <li>Look at the robots.txt file and find what is listed after Disallow. This is a directory that invisible to the spiders. The admin however, forgot to hide this directory from the public so point your browser to <em>http://ec521.raxcity.com/[invisible directory name].</em></li>
 			 </ul>
 <p>These are all of the files that the admin did not want you to see. Take a look at the html file here.</p>
 <blockquote> What is the super secret password </blockquote>
@@ -163,7 +160,16 @@ Table: users
               <p>Hello 2!</p>
             </div>
             <div class="tab-pane fade" id="board">
-            <table class="table table-striped table-condensed">
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+
+    <div class="container-fluid container-fluid-3 padded" >
+      <div class="row-fluid row-fluid-1"> 
+            <h1>Scoreboard</h1>
+			<table class="table table-striped table-condensed">
               <thead>
                 <tr>
                   <th>Name</th>
@@ -195,15 +201,7 @@ Table: users
               <% end %>
               </tbody>
             </table>
-             </div>
-          </div>
-        </span>
-      </div>
-    </div>
-
-    <div class="container-fluid padded">
-      <div class="row-fluid row-fluid-1">
-       <!-- <span class="span6 span6-3">
+	   <!-- <span class="span6 span6-3">
           <h2 class="heading heading-3">Collaborate</h2>
           <p class="p-1">Tie it all together with <b>clickable prototypes</b> and <b>commenting</b> features.</p>
           <p
@@ -229,7 +227,7 @@ Table: users
 	<div id="instructions" class="modal hide fade">
 	  <div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h3>Modal header</h3>
+		<h3>What is the W3AF Challenge</h3>
 	  </div>
 	  <div class="modal-body">
 		<p>Welcome to the W3AF Challenge</p>
