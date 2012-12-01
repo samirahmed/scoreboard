@@ -4,17 +4,19 @@ Bundler.require
 
 enable :sessions
 
-if ENV['VCAP_SERVICES'].nil?
-  DataMapper::Logger.new(STDOUT, :debug)
-  DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/blog.db")
-else
-  require 'json'
-  svcs = JSON.parse ENV['VCAP_SERVICES']
-  mysql = svcs.detect { |k,v| k =~ /^mysql/ }.last.first
-  creds = mysql['credentials']
-  user, pass, host, name = %w(user password host name).map { |key| creds[key] }
-  DataMapper.setup(:default, "mysql://#{user}:#{pass}@#{host}/#{name}")
-end
+#if ENV['VCAP_SERVICES'].nil?
+  #DataMapper::Logger.new(STDOUT, :debug)
+  #DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/blog.db")
+#else
+  #require 'json'
+  #svcs = JSON.parse ENV['VCAP_SERVICES']
+  #mysql = svcs.detect { |k,v| k =~ /^mysql/ }.last.first
+  #creds = mysql['credentials']
+  #user, pass, host, name = %w(user password host name).map { |key| creds[key] }
+  #DataMapper.setup(:default, "mysql://#{user}:#{pass}@#{host}/#{name}")
+#end
+
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/blog.db")
 
 class Competitor
   include DataMapper::Resource
