@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'bundler' 
+require 'rake'
 Bundler.require
 
 enable :sessions
@@ -119,10 +120,24 @@ post '/answer' do
   redirect to_answer_page
 end
 
+get '/admin' do
+  protected!
+  @competitors = Competitor.all
+  @total = @competitors.size
+  @questions = Question.all
+  @answered = @questions.reduce({}){|count,qq| count[ qq.question ]||=0; count }
+  @answered = Competitor.all.reduce(@answered) do |count,user| 
+    (JSON.load(user.correct)).map{ |item| count[item] += 1 }
+    count 
+    end 
+  @active = active!
+  erb :admin
+end
+
 get '/admin/disable' do
   protected!
   Competition.all.destroy
-  "Deactivated Competition"
+  redirect "/admin"
 end
 
 get '/admin/start' do
@@ -130,7 +145,10 @@ get '/admin/start' do
   comp = Competition.first_or_create({ :id => 1 })
   comp.active = true;
   comp.save;
-  "Activated Competition"
+  redirect "/admin"
+end
+
+get '/admin/rake/:task' do
 end
 
 helpers do
