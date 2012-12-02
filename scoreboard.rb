@@ -4,18 +4,6 @@ Bundler.require
 
 enable :sessions
 
-#if ENV['VCAP_SERVICES'].nil?
-  #DataMapper::Logger.new(STDOUT, :debug)
-  #DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/blog.db")
-#else
-  #require 'json'
-  #svcs = JSON.parse ENV['VCAP_SERVICES']
-  #mysql = svcs.detect { |k,v| k =~ /^mysql/ }.last.first
-  #creds = mysql['credentials']
-  #user, pass, host, name = %w(user password host name).map { |key| creds[key] }
-  #DataMapper.setup(:default, "mysql://#{user}:#{pass}@#{host}/#{name}")
-#end
-
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/blog.db")
 
 class Competitor
@@ -29,20 +17,15 @@ end
 
 class Question
   include DataMapper::Resource
-  property :id,       Serial
-  property :question, String
+  property :question, String, :key => true
   property :answer,   String
 end
 
 DataMapper.auto_upgrade!
 
-get "/name/:user" do
-  name = params[:user]
-  Competitor.get(name).to_json
-end
-
-get "/score" do
-  Competitor.all.to_json
+def get_user
+  return nil if session["user"].nil?
+  @user = @user || Competitor.get(session["user"])
 end
 
 get "/logout" do
@@ -57,15 +40,14 @@ get "/login" do
     session['message'] = "No Such User"
     redirect '/'
   else
-    session["user"]= user
+    session["user"]= user.name
     session['message'] = "Welcome #{user.name}" 
   end
   redirect "/"
 end
 
 get "/" do
-  @user= session["user"] 
-  
+  @user = get_user 
   @message = session["message"]
   session["message"] = nil
   
@@ -74,35 +56,53 @@ get "/" do
   erb :index
 end
 
+get '/answer' do
+  @title = session["title"] || "Error!"
+  @body = session["message"]
+  erb :answer
+end
+
 post '/answer' do
-  if session["user"].nil? 
-    session[:message]="Invalid User"
-    redirect "/"
+  
+  to_answer_page = '/answer'
+  user = get_user
+
+  if user.nil? 
+    session["message"]="Invalid User"
+    redirect to_answer_page
   end
 
-  qid=params[:id]
+  qid=params[:question]
   ans=params[:answer]
-  name=session["user"]
-  if (qid.nil? or  ans.nil? or name.nil?)
+  
+  if (qid.nil? or  ans.nil? or user.nil?)
     session["message"] = "Bad Parameters, expected a Question and Answer"
-    redirect "/"
+    redirect to_answer_page
   end
 
-  question = Question.get(id)
-  user = Competitor.get(name)
+  question = Question.get(qid)
   
   if question.nil? 
-    session["message"] = "Bad Question Id" 
-    redirect "/"
+    session["message"] = "Bad Question" 
+    redirect to_answer_page
+  end
+     
+  answered = JSON.load( user.correct )
+  if answered.include?(qid)
+    session["message"] = "You Already Answered This Question!"
+    redirect to_answer_page
   end
 
-  if answer == question.answer
+  if ans.downcase == question.answer.downcase
      user.score += 1
-     user.correct = JSON.parse(JSON.load(user.correct).push(qid))
+     user.correct = JSON.dump(answered.push(qid))
      user.save
-     puts "Correct! Your Score is #{user.score}"
+     session["title"] = "CORRECT"
+     session["message"]  = "Correct! Your Score is #{user.score.to_s}"
   else
-     puts "InCorrect"
+     session["iscorrect"] = "INCORRECT"
+     session["message"] = "That is not correct, your score is still #{user.score.to_s}"
   end
-
+  
+  redirect to_answer_page
 end
