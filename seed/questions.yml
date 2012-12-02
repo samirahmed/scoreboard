@@ -1,0 +1,23 @@
+-
+    question:       hidden_files
+    answer:         w00t1337
+-
+    question:       db_name
+    answer:         securelab
+-
+    question:       table_count 
+    answer:         3
+-
+    question:       columns_name
+    answer:         username,password,id
+-
+    question:       james_bond
+    answer:         trachtenberg
+-
+    question:       xss
+    answer:         hack_th3_pl4n3t
+-
+    question:       server_side 
+    answer:         no_strings
+
+
