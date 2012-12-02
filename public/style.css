@@ -370,8 +370,8 @@ tr{
 .challenge li{
 		max-width:800px;
 		font-size: 18px;
-		margin-top:10px;
-		margin-bottom:10px;
+		margin-top:15px;
+		margin-bottom:15px;
 }
 
 .challenge blockquote{
@@ -383,4 +383,29 @@ tr{
 
 .nav-tabs > .active > a, .nav-tabs > .active > a:hover{
 	background-color: #c4c4c4;
+}
+
+.challenge form {
+	margin: 10px;
+}
+
+.challenge input {
+	margin: 0px;
+}
+
+.challenge button {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.nav {
+	padding-bottom:0;
+	margin-bottom:0;
+}
+
+.challenge {
+	padding: 25px;
+	background-color: #EFEDE8;
+	border-radius: 5px;
+	border :1px solid #ddd;
 }

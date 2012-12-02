@@ -13,6 +13,12 @@
     <title>EC521 TEAM2 LAB</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
   </head>
+  <script type="text/javascript">
+  $(function () {
+     var activeTab = $('[href=' + location.hash + ']');
+	    activeTab && activeTab.tab('show');
+		});
+  </script>
   
   <!-- Top RED BAR -->
   <body>
@@ -101,7 +107,13 @@
 			 <li>Look at the robots.txt file and find what is listed after Disallow. This is a directory that invisible to the spiders. The admin however, forgot to hide this directory from the public so point your browser to <em>http://ec521.raxcity.com/[invisible directory name].</em></li>
 			 </ul>
 <p>These are all of the files that the admin did not want you to see. Take a look at the html file here.</p>
-<blockquote> What is the super secret password </blockquote>
+<blockquote> What is the super secret password
+	<form method="post" action="/answer">
+		<input type="hidden" name="question" value="hidden_files">
+		<input type="text" name="answer">
+		<button type="submit" class="btn btn-danger" >Submit</button>
+	</form>
+</blockquote>
 			</div>
             <div class="tab-pane fade challenge" id="sqli">
               <h3>Exploiting the Database - Attack!</h3>
@@ -147,8 +159,34 @@ Table: users
 		<li>What type of passwords are these? Can you crack them (hint: they are not salted)?</li>
 		<li>Try cracking them using <em>John the Ripper</em> or <a href="http://crackstation.net">crackstation.net</a></li>
 	</ul>
-	<blockquote> How Many Tables are there in all? </blockquote>
-	<blockquote> What is James Bonds password? </blockquote>
+	<blockquote> What is the name of the database
+	<form method="post" action="/answer">
+		<input type="hidden" name="question" value="db_name">
+		<input type="text" name="answer">
+		<button type="submit" class="btn btn-danger" >Submit</button>
+	</form>
+	</blockquote>
+	<blockquote> How many tables are in this database
+	<form method="post" action="/answer">
+		<input type="hidden" name="question" value="table_count">
+		<input type="text" name="answer">
+		<button type="submit" class="btn btn-danger" >Submit</button>
+	</form>
+	</blockquote>
+	<blockquote> What is the name that holds the columns in database 'users'
+	<form method="post" action="/answer">
+		<input type="hidden" name="question" value="columns_name">
+		<input type="text" name="answer">
+		<button type="submit" class="btn btn-danger" >Submit</button>
+	</form>
+	</blockquote>
+	<blockquote> What is James Bonds password?
+	<form method="post" action="/answer">
+		<input type="hidden" name="question" value="james_bond">
+		<input type="text" name="answer">
+		<button type="submit" class="btn btn-danger" >Submit</button>
+	</form>
+	</blockquote>
 </div>
             <div class="tab-pane fade" id="xss">
               <p>Hello 2!</p>
