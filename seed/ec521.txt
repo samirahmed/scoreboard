@@ -40,3 +40,5 @@ MarcAdam
 ManshilaAdlakha 
 YuxiangMa 
 DavidHughes
+AriTrachtenberg
+CassieHuang

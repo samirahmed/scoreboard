@@ -20,6 +20,7 @@ class Question
   include DataMapper::Resource
   property :question, String, :key => true
   property :answer,   String
+  property :points,   Integer, :default => 5
 end
 
 class Competition
@@ -118,7 +119,7 @@ post '/answer' do
   end
 
   if ans.downcase == question.answer.downcase
-     user.score += 1
+     user.score += question.points
      user.correct = JSON.dump(answered.push(qid))
      user.save
      session["title"] = "CORRECT"

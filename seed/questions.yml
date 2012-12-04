@@ -1,23 +1,30 @@
 -
     question:       hidden_files
     answer:         w00t1337
+    points:         20
 -
     question:       db_name
     answer:         securelab
+    points:         10
 -
     question:       table_count 
     answer:         3
+    points:         10
 -
     question:       columns_name
     answer:         username,password,id
+    points:         10
 -
     question:       james_bond
     answer:         trachtenberg
+    points:         30
 -
     question:       xss
     answer:         hack_th3_pl4n3t
+    points:         10
 -
     question:       server_side 
     answer:         no_strings
+    points:         10
 
 

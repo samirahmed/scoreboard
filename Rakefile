@@ -1,4 +1,4 @@
-task :seed_ec521 do
+task :seed_competitors do
 	puts "Loading EC521"
 	competitors = File.open('seed/ec521.txt','r').read().split
 	require './scoreboard'
@@ -7,7 +7,7 @@ task :seed_ec521 do
 	end
 end
 
-task :seed_random_ec521 do
+task :seed_competitors_random do
 	puts "Loading EC521"
 	competitors = File.open('seed/ec521.txt','r').read().split
 	require './scoreboard'
@@ -25,9 +25,9 @@ task :seed_questions do
 	require 'yaml'
 	questions_answers= YAML::load( File.open 'seed/questions.yml', 'r' )
 	questions_answers.each do |qa|
-		q = Question.first_or_create({:question => qa["question"] , :answer=>qa["answer"] })
+		q = Question.first_or_create({:question => qa["question"] , :answer=>qa["answer"] ,:points =>qa["points"]})
 		q.save
-		puts "Question: #{q.question} \t Answer: #{q.answer}"
+		puts "Question: #{q.question} \t Answer: #{q.answer} \t Points: #{q.points}"
 	end
 
 end
