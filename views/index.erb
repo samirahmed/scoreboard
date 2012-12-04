@@ -18,16 +18,9 @@
       <div class="row-fluid">
             <span class="span7 offset1">
       
-      <!-- Pass along message if there is one --> 
-      <% if !@message.nil?%>
-      <div class="alert pagination-centered">
-        <button type="button" class="close" data-dismiss="alert">×</button>
-        <strong><%= @message %></strong> 
-        </div>  
-      <% end %>
 			
       <h1 class="title">W3AF CHALLENGE</h1>
-			<br/><br/>
+			<br/>
       <% if @user.nil? %>
 			<p class="instruction">Just Enter Your Twiki Username</p>
 			<form method="get" action="/login">
@@ -45,6 +38,15 @@
       		<h1 class="name" style="margin:20px 0;"><%= @user.name %></h1>
 			<p class="instruction"><a class='instruction' href="/logout" >logout</a></p>
         	<% end %>
+      
+			  <!-- Pass along message if there is one --> 
+			  <% if !@message.nil?%>
+			  <br/>
+			  <div class="alert pagination-centered" style="margin:0px;">
+				<button type="button" class="close" data-dismiss="alert">×</button>
+				<strong><%= @message %></strong> 
+				</div>  
+			  <% end %>
 			</span>
 			<span class="span3 offset1">
         <a href="http://w3af.sourceforge.net/documentation/user/w3afUsersGuide.pdf" class="btn btn-1" style="background-color:#ff7f00;">W3AF</a>
