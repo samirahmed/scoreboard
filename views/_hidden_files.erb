@@ -1,0 +1,18 @@
+ <h3>Robots Reader - Find Hidden Files</h3>
+ <p>Sometimes there are pages that admins do not want spiders to be able to visit. They keep theses in a robots.txt file. W3AF has a robotsReader plugin that will reveal the location of these files for us. 
+ </p>
+ <ul>
+ <li>Point W3AF to the page <a href="<%=@site%>"><%=@site%></a></li>
+ <li>Enable the <em>robotsReader</em> plugin in the 'discovery'</li>
+ <li>After running, look at the <em>Results</em> page, there should be a hit for <em>robotsReader</em> 
+ </li>
+ <li>Look at the robots.txt file and find what is listed after Disallow. This is a directory that invisible to the spiders. The admin however, forgot to hide this directory from the public so point your browser to <b><em><%="#{@site}/&lt;invisible directory name&gt;" %></em></b></li>
+ </ul>
+<p>These are all of the files that the admin did not want you to see. Take a look at the html file here.</p>
+<blockquote> What is the super secret password
+	<form method="post" action="/answer">
+		<input type="hidden" name="question" value="hidden_files">
+		<input type="text" name="answer">
+		<button type="submit" class="btn btn-danger" >Submit</button>
+	</form>
+</blockquote>

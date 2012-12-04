@@ -1,0 +1,71 @@
+<h3>Exploiting the Database - Attack!</h3>
+<ul>
+<li>Go over to the Exploit tab,  it should have found sqlmap and sql_webshell exploits</li>
+<li>W3AF has a feature Exploit All Vulns, which is the icon with the 3 gears on it</li>
+<li>Click that, and W3AF will go through and exploit everything.  After a minute or so, you should notice an entry under the Shells pane.</li>
+<li>Double-click your shell to get access to the sql webshell.   A new window with a command prompt should spawn.</li>
+<li>Use this shell to interact with the database.</li>
+</ul>
+<pre>
+$ help
+
+fingerprint             perform an exaustive database fingerprint
+banner                  get database banner
+current-user            get current database user
+current-db              get current database name
+users                   get database users
+dbs                     get available databases
+tables [db]             get available databases tables (optional: database)
+columns &lt;table&gt; [db]    get table columns (required: table optional: database)
+dump &lt;table&gt; [db]       dump a database table (required: -T optional: -D)
+file &lt;FILENAME&gt;         read a specific file content
+expression &lt;EXPRESSION&gt; expression to evaluate
+union-check             check for UNION sql injection	
+</pre>
+<ul>
+<li>Use <b>dbs</b> to find the database name</li>
+<li>Use <b>tables</b> to find the table name</li>
+<li>Use <b>dump &lt;table&gt; [db]</b> to dump the table</li>
+</ul>
+<pre>
+Database: securelab
+Table: users
+[1 entry]
++---------------+----------------------------------+----+
+| username      | password                         | ID |
++---------------+----------------------------------+----+
+| jeff          | 166ee015c0e0934a8781e0c86a197c6e | 1  |
++---------------+----------------------------------+----+
+</pre>
+<ul>
+<li>What type of passwords are these? Can you crack them (hint: they are not salted)?</li>
+<li>Try cracking them using <em>John the Ripper</em> or <a href="http://crackstation.net">crackstation.net</a></li>
+</ul>
+<blockquote> What is the name of the database
+	<form method="post" action="/answer">
+	<input type="hidden" name="question" value="db_name">
+	<input type="text" name="answer">
+	<button type="submit" class="btn btn-danger" >Submit</button>
+</form>
+</blockquote>
+<blockquote> How many tables are in this database
+	<form method="post" action="/answer">
+	<input type="hidden" name="question" value="table_count">
+	<input type="text" name="answer">
+	<button type="submit" class="btn btn-danger" >Submit</button>
+</form>
+</blockquote>
+<blockquote> What is the name that holds the columns in database 'users'
+	<form method="post" action="/answer">
+	<input type="hidden" name="question" value="columns_name">
+	<input type="text" name="answer">
+	<button type="submit" class="btn btn-danger" >Submit</button>
+	</form>
+</blockquote>
+<blockquote> What is James Bonds password?
+	<form method="post" action="/answer">
+	<input type="hidden" name="question" value="james_bond">
+	<input type="text" name="answer">
+	<button type="submit" class="btn btn-danger" >Submit</button>
+	</form>
+</blockquote>

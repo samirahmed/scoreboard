@@ -125,7 +125,7 @@ post '/answer' do
      session["title"] = "CORRECT"
      session["message"]  = "Correct! Your Score is #{user.score.to_s}"
   else
-     session["iscorrect"] = "INCORRECT"
+     session["title"] = "INCORRECT"
      session["message"] = "That is not correct, your score is still #{user.score.to_s}"
   end
   
