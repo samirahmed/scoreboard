@@ -41,17 +41,20 @@
 			</form>
 			<% else %>
 			<!--<p class="instruction">This is your <a href=<%= @site %> style="text-decoration:none; color:RED;">Target</a><p/>-->
-			<p class="instruction" style="font-size:20px; margin:20px 0;">Your Logged In As<p/>
-      <h1 class="name"><%= @user.name %></h1>
+			<p class="instruction" style="font-size:20px;">Your Logged In As<p/>
+      		<h1 class="name" style="margin:20px 0;"><%= @user.name %></h1>
 			<p class="instruction"><a class='instruction' href="/logout" >logout</a></p>
         	<% end %>
 			</span>
 			<span class="span3 offset1">
         <a href="http://w3af.sourceforge.net/documentation/user/w3afUsersGuide.pdf" class="btn btn-1" style="background-color:#ff7f00;">W3AF</a>
+				<% if @user.nil? %>
 				<br/><br/>
-        <a class="btn btn-1" style="background-color:goldenrod;">Cha</a>
-				<br/><br/>
-				<a href="#instructions" role="button" data-toggle="modal" class="btn btn-1" style="background-color:maroon;">What Is This?</a>
+				<a href="#instructions" role="button" data-toggle="modal" class="btn btn-1" style="background-color:goldenrod;">What Is This?</a>
+				<% end %>	
+			<br/><br/>
+        <a class="btn btn-1" style="background-color:maroon;" href="<%=@site%>">Target Site</a>
+			<% if @user %><%= erb :_user_score %> <% end %>
 			</span>
 	  </div>
     </div>
