@@ -35,6 +35,10 @@ def get_user
   @user = @user || Competitor.get(session["user"])
 end
 
+def get_site
+  return ENV["VULNERABLE_SITE_#{rand(2)}"] || "http://www.raxcity.com"
+end
+
 get "/logout" do
   session["user"] = nil
   redirect "/"
@@ -54,19 +58,22 @@ get "/login" do
 end
 
 get "/" do
-
-  @user = get_user 
-  @message = session["message"]
-  session["message"] = nil
-  
-  @competitors = Competitor.all
-  @total = 100
-  
   if active!
+    @user = get_user
+    @message = session["message"]
+    session["message"] = nil
+    
+    @site = get_site
+    @competitors = Competitor.all
+    @total = 100
     erb :index
   else
     "No Competition"
   end
+end
+
+get '/tutorial' do
+  erb :tutorial
 end
 
 get '/answer' do

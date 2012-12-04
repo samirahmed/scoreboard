@@ -72,7 +72,8 @@
 			<br/><input type="submit" class="btn btn-1" value="GET STARTED">
 			</form>
 			<% else %>
-			<p class="instruction">Your Logged In As<p/>
+			<!--<p class="instruction">This is your <a href=<%= @site %> style="text-decoration:none; color:RED;">Target</a><p/>-->
+			<p class="instruction" style="font-size:20px; margin:20px 0;">Your Logged In As<p/>
       <h1 class="name"><%= @user.name %></h1>
 			<p class="instruction"><a class='instruction' href="/logout" >logout</a></p>
         	<% end %>
@@ -114,11 +115,11 @@
              <p>Sometimes there are pages that admins do not want spiders to be able to visit. They keep theses in a robots.txt file. W3AF has a robotsReader plugin that will reveal the location of these files for us. 
 			 </p>
 			 <ul>
-			 <li>Point W3AF to the page <a href="http://ec521.raxcity.com">http://ec521.raxcity.com/</a></li>
+			 <li>Point W3AF to the page <a href="<%=@site%>"><%=@site%></a></li>
 			 <li>Enable the <em>robotsReader</em> plugin in the 'discovery'</li>
 			 <li>After running, look at the <em>Results</em> page, there should be a hit for <em>robotsReader</em> 
 			 </li>
-			 <li>Look at the robots.txt file and find what is listed after Disallow. This is a directory that invisible to the spiders. The admin however, forgot to hide this directory from the public so point your browser to <em>http://ec521.raxcity.com/[invisible directory name].</em></li>
+			 <li>Look at the robots.txt file and find what is listed after Disallow. This is a directory that invisible to the spiders. The admin however, forgot to hide this directory from the public so point your browser to <b><em><%="#{@site}/&lt;invisible directory name&gt;" %></em></b></li>
 			 </ul>
 <p>These are all of the files that the admin did not want you to see. Take a look at the html file here.</p>
 <blockquote> What is the super secret password
