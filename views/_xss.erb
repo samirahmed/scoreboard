@@ -30,3 +30,15 @@ $.post&lt;DESTINATION_URL&gt;, &lt;POST_DATA&gt;)
 	<button type="submit" class="btn btn-danger" >Submit</button>
 </form>
 </blockquote>
+
+<ul>
+<li> Using the key login as admin
+</li>
+</ul>
+<blockquote> What is the admin's favorite quote?
+	<form method="post" action="/answer">
+	<input type="hidden" name="question" value="xss_favorite_quote">
+	<input type="text" name="answer">
+	<button type="submit" class="btn btn-danger" >Submit</button>
+</form>
+</blockquote>

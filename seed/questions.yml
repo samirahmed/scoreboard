@@ -1,56 +1,60 @@
 -
     question:       admin_password
     answer:         letmein
-    points:         15
+    points:         10
 -
     question:       important_file
     answer:         remember.hidden
-    points:         7
+    points:         6
 -
     question:       secret_password
     answer:         w00t1337
-    points:         5
+    points:         4
 -
     question:       db_name
     answer:         securelab
-    points:         10
+    points:         4
 -
     question:       table_count 
     answer:         23
-    points:         10
+    points:         4
 -
     question:       longest_table_name
     answer:         MeaningOfLife
-    points:         10
+    points:         4
 -
     question:       james_bond
     answer:         trachtenberg
-    points:         30
+    points:         12
 -
     question:       admin_cookie
     answer:         ec521thiscannotbecrackedbycrackstation 
-    points:         10
+    points:         12
+-
+    question:       xss_favorite_quote
+    answer:         hack_th3_pl4n3t
+    points:         4
 -
     question:       ssi_filename
     answer:         response.py
-    points:         10
+    points:         2
 -
     question:       ssi_secret_location
     answer:         sparta
-    points:         10
+    points:         4
 -
     question:       ssi_real_filename 
     answer:         jkl.shtml 
-    points:         10
+    points:         8
 -
     question:       fu_plugin_name
     answer:         fileUpload
-    points:         15
+    points:         2
 -
     question:       fu_relative_path
     answer:         hidden/files
-    points:         7
+    points:         8
 -
     question:       fu_flag
     answer:         W4r3z
-    points:         5
+    points:         16
