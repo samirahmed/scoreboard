@@ -8,11 +8,11 @@
     points:         10
 -
     question:       table_count 
-    answer:         3
+    answer:         23
     points:         10
 -
-    question:       columns_name
-    answer:         username,password,id
+    question:       longest_table_name
+    answer:         MeaningOfLife
     points:         10
 -
     question:       james_bond
