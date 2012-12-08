@@ -42,3 +42,15 @@
     question:       ssi_real_filename 
     answer:         jkl.shtml 
     points:         10
+-
+    question:       fu_plugin_name
+    answer:         fileUpload
+    points:         15
+-
+    question:       fu_relative_path
+    answer:         hidden/files
+    points:         7
+-
+    question:       fu_flag
+    answer:         W4r3z
+    points:         5
