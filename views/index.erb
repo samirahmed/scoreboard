@@ -67,38 +67,36 @@
         <span class="span10 offset1">
          <ul id="myTab" class="nav nav-tabs">
            <li class>
-            <a href="#hidden_files" class="instruction" data-toggle="tab">Hidden Files</a>
+              <a href="#server_side_include" class="instruction" data-toggle="tab">Server Side Include.</a>
            </li>
            <li class>
-              <a href="#sqli" class="instruction" data-toggle="tab">SQLI</a>
+              <a href="#sqli" class="instruction" data-toggle="tab">SQLI.</a>
             </li>
            <li class>
-              <a href="#xss" class="instruction" data-toggle="tab">XSS</a>
+              <a href="#xss" class="instruction" data-toggle="tab">XSS.</a>
             </li>
            <li class>
-              <a href="#fileupload" class="instruction" data-toggle="tab">File Upload</a>
+              <a href="#fileupload" class="instruction" data-toggle="tab">File Upload.</a>
             </li>
            <li class>
-              <a href="#server_side_include" class="instruction" data-toggle="tab">Server Side File Include</a>
+            <a href="#hidden_files" class="instruction" data-toggle="tab">Hidden Files.</a>
             </li>
          </ul>
            <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade active in challenge" id="hidden_files">
-			<%= erb :_hidden_files %>
+            <div class="tab-pane fade challenge" id="server_side_include">
+			<%= erb :_server_side_include %>
 			</div>
-            <div class="tab-pane fade challenge" id="sqli">
+            <div class="tab-pane fade active in challenge" id="sqli">
 			<%= erb :_sqli %>
 			</div>
-            <div class="tab-pane fade" id="xss">
+            <div class="tab-pane fade challenge" id="xss">
+			<%= erb :_xss %>
+            </div>
+            <div class="tab-pane fade challenge" id="fileupload">
               <p>Hello 2!</p>
             </div>
-            <div class="tab-pane fade" id="fileupload">
-              <p>Hello 2!</p>
-            </div>
-            <div class="tab-pane fade" id="server_side_include">
-              <p>Hello 2!</p>
-            </div>
-            <div class="tab-pane fade" id="board">
+            <div class="tab-pane fade challenge" id="hidden_files">
+			<%= erb :_hidden_files %>
             </div>
           </div>
         </span>

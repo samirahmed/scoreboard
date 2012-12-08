@@ -1,7 +1,15 @@
 -
-    question:       hidden_files
+    question:       admin_password
+    answer:         letmein
+    points:         15
+-
+    question:       important_file
+    answer:         remember.hidden
+    points:         7
+-
+    question:       secret_password
     answer:         w00t1337
-    points:         20
+    points:         5
 -
     question:       db_name
     answer:         securelab
@@ -19,12 +27,20 @@
     answer:         trachtenberg
     points:         30
 -
-    question:       xss
-    answer:         hack_th3_pl4n3t
+    question:       admin_cookie
+    answer:         ec521thiscannotbecrackedbycrackstation 
     points:         10
 -
-    question:       server_side 
-    answer:         no_strings
+    question:       ssi_filename
+    answer:         response.py
+    points:         10
+-
+    question:       ssi_secret_location
+    answer:         sparta
+    points:         10
+-
+    question:       ssi_real_filename 
+    answer:         jkl.shtml 
     points:         10
 
 

@@ -1,0 +1,35 @@
+<h3>Exploiting the Server Side Include</h3>
+ <p>
+Now that you know how w3af works, use it to figure out which file is vulnerable to SSI injections.  This should be easy enough, w3af does everything for you!
+ </p>
+ <ul>
+ <li>Point W3AF to the page <a href="<%=@site%>"><%=@site%></a></li>
+ <li>Enable the <em>ssi</em> plugin in the 'audit' and  <em>webspider</em>'discovery'</li>
+ </ul>
+<blockquote> Which file is vulnerable to server side inclusion
+	<form method="post" action="/answer">
+		<input type="hidden" name="question" value="ssi_filename">
+		<input type="text" name="answer">
+		<button type="submit" class="btn btn-danger" >Submit</button>
+	</form>
+</blockquote>
+<ul>
+<li> Head over to the <b>form.shtml</b> and try displaying the contents of an ssi enabled file</li>
+</ul>
+<blockquote> Where is the secret location?
+	<form method="post" action="/answer">
+		<input type="hidden" name="question" value="ssi_secret_location">
+		<input type="text" name="answer">
+		<button type="submit" class="btn btn-danger" >Submit</button>
+	</form>
+</blockquote>
+<p>
+So you found the file that contains the secret location...or so you think.  Remember that SSI is mainly used to include files in an html page.  SSI supports a variety of commands that will help you answer this next question. 
+</p>
+<blockquote> Which file actually contains the secret location?
+	<form method="post" action="/answer">
+		<input type="hidden" name="question" value="ssi_real_filename">
+		<input type="text" name="answer">
+		<button type="submit" class="btn btn-danger" >Submit</button>
+	</form>
+</blockquote>
