@@ -32,7 +32,7 @@ task :seed_questions do
 
 end
 
-task :drop_ec521 do
+task :drop do
 	require './scoreboard'
 	Competitor.all.destroy
 	Question.all.destroy

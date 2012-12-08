@@ -65,6 +65,7 @@ end
 get "/" do
   if active!
     @user = get_user
+    puts @user.score.to_s if !@user.nil?
     @message = session["message"]
     session["message"] = nil
     
@@ -119,9 +120,11 @@ post '/answer' do
   end
 
   if ans.downcase == question.answer.downcase
+     puts "The Score was #{user.score}"
      user.score += question.points
      user.correct = JSON.dump(answered.push(qid))
-     user.save
+     user.save!
+     puts "The Score is now #{user.score}"
      session["title"] = "CORRECT"
      session["message"]  = "Correct! Your Score is #{user.score.to_s}"
   else
