@@ -45,6 +45,10 @@ def get_site
   end
 end
 
+get "/slides" do
+  erb :slides
+end
+
 get "/logout" do
   session["user"] = nil
   redirect "/"
@@ -80,7 +84,7 @@ get "/" do
     @total = 100
     erb :index
   else
-    "No Competition"
+    redirect "/slides"
   end
 end
 

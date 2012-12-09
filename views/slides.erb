@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <%= erb :_head %>   
+  
+  <script type="text/javascript">
+  $(function () {
+     var activeTab = $('[href=' + location.hash + ']');
+	    activeTab && activeTab.tab('show');
+		});
+  </script>
+  
+  <!-- Top RED BAR -->
+  <body>
+	<%= erb :_top_bar%>   
+
+  	<!-- Name  -->
+	<div class="container spaced">
+      <div class="row-fluid">
+      <h1 class="title">W3AF CHALLENGE</h1>
+	  <br/><br/>
+	  <script async class="speakerdeck-embed" data-id="a38775e023c80130cca71231381b08f2" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+	  </div>
+    </div>
+  </body>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</html>
