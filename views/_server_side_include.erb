@@ -4,7 +4,7 @@ Now that you know how w3af works, use it to figure out which file is vulnerable 
  </p>
  <ul>
  <li>Point W3AF to the page <a href="<%=@site%>"><%=@site%></a></li>
- <li>Enable the <em>ssi</em> plugin in the 'audit' and  <em>webspider</em>'discovery'</li>
+ <li>Enable the <em>ssi</em> plugin from the 'audit' plugs  and  <em>webspider</em> in the 'discovery' plugins</li>
  </ul>
 <blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("ssi_filename") %> > What file is vulnerable to server side inclusion [<%= @points["ssi_filename"] %>]
 	<form method="post" action="/answer">
