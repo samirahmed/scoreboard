@@ -23,7 +23,8 @@
 $.post&lt;DESTINATION_URL&gt;, &lt;POST_DATA&gt;)
 </pre>
 
-<blockquote> What is the admin's "key" for the site? 
+<blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("admin_cookie") %> >
+What is the admin's "key" for the site? [<%= @points["admin_cookie"] %>]
 	<form method="post" action="/answer">
 	<input type="hidden" name="question" value="admin_cookie">
 	<input type="text" name="answer">
@@ -35,7 +36,7 @@ $.post&lt;DESTINATION_URL&gt;, &lt;POST_DATA&gt;)
 <li> Using the key login as admin
 </li>
 </ul>
-<blockquote> What is the admin's favorite quote?
+<blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("xss_favorite_quote") %> > What is the admin's favorite quote?  [<%= @points["xss_favorite_quote"] %>]
 	<form method="post" action="/answer">
 	<input type="hidden" name="question" value="xss_favorite_quote">
 	<input type="text" name="answer">

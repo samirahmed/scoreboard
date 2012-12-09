@@ -4,7 +4,7 @@
 
 	Oh you did?  Wonderful, looks like you’ve stumbled onto a hidden developers portal, and it looks like there is a file upload page
  </p>
-<blockquote> What Audit plugin can you use to test if they are any file upload vulnerabilites?
+<blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("fu_plugin_name") %> > What Audit plugin can you use to test if they are any file upload vulnerabilites? [<%= @points["fu_plugin_name"] %>]
 	<form method="post" action="/answer">
 		<input type="hidden" name="question" value="fu_plugin_name">
 		<input type="text" name="answer">
@@ -14,7 +14,8 @@
  <ul>
  <li>Point the plugin at the target site and run it
  </ul>
-<blockquote> What is the folder to which files are uploaded to on this server (relative path based on root of webpage)?
+<blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("fu_relative_path") %> > 
+What is the folder to which files are uploaded to on this server (relative path based on root of webpage)? [<%= @points["fu_relative_path"] %>]
 	<form method="post" action="/answer">
 		<input type="hidden" name="question" value="fu_relative_path">
 		<input type="text" name="answer">
@@ -27,7 +28,7 @@ Well, you have a vulnerability, can you attack it with w3af and get a shell?
 <p>
 Didn’t think so, this website has some defense against w3af, but if you got to this point, you also know that you can get to the uploaded files and run them on the browser.  Now this is the hard part...
 </p>
-<blockquote> Get a shell onto the computer using this vulnerability, and give us the flag located in the motd (HINT: Try to use Prof. Trachtenberg’s preferred way for transferring files to backtrack from the host!)
+<blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("fu_flag") %> > Get a shell onto the computer using this vulnerability, and give us the flag located in the motd (HINT: Try to use Prof. Trachtenberg’s preferred way for transferring files to backtrack from the host!) [<%= @points["fu_flag"] %>]
 	<form method="post" action="/answer">
 		<input type="hidden" name="question" value="fu_flag">
 		<input type="text" name="answer">

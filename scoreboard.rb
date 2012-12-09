@@ -69,7 +69,12 @@ get "/" do
     @message = session["message"]
     session["message"] = nil
     
+    @completed = []
+    if not @user.nil?
+      @completed = JSON.load @user.correct
+    end
     @site = get_site
+    @points = Question.all.reduce({}){ |dict,q| dict[q.question]=q.points; dict } 
     @competitors = Competitor.all
     @total = 100
     erb :index

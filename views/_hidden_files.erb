@@ -9,7 +9,8 @@
  <li>Look at the robots.txt file and find what is listed after Disallow. This is a directory that invisible to the spiders. The admin however, forgot to hide this directory from the public so point your browser to <b><em><%="#{@site}/&lt;invisible directory name&gt;" %></em></b></li>
  </ul>
 <p>These are all of the files that the admin did not want you to see. Take a look at the html file here.</p>
-<blockquote> What is the super secret password
+<blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("secret_password") %> > What is the super secret password [<%= @points["secret_password"] %>]
+
 	<form method="post" action="/answer">
 		<input type="hidden" name="question" value="secret_password">
 		<input type="text" name="answer">
@@ -19,7 +20,9 @@
 <ul>
 <li> Try using a grep plugin on the hidden folders</li>
 </ul>
-<blockquote> What file does the admin think is 'important'
+<blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("important_file") %> > 
+What file does the admin think is 'important'
+[<%= @points["important_file"] %>]
 	<form method="post" action="/answer">
 		<input type="hidden" name="question" value="important_file">
 		<input type="text" name="answer">
@@ -30,7 +33,9 @@
 <li> If you found the important file, you will know that it is a binary. But how do you run it? Can you think of a way to run binaries on the server that you learned in another challenge? 
 </li>
 </ul>
-<blockquote> After running the binary using the server, what is the admin's password for this page?
+<blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("admin_password") %> > 
+After running the binary using the server, what is the admin's password for this page?
+[<%= @points["admin_password"] %>]
 	<form method="post" action="/answer">
 		<input type="hidden" name="question" value="admin_password">
 		<input type="text" name="answer">

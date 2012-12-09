@@ -6,7 +6,7 @@ Now that you know how w3af works, use it to figure out which file is vulnerable 
  <li>Point W3AF to the page <a href="<%=@site%>"><%=@site%></a></li>
  <li>Enable the <em>ssi</em> plugin in the 'audit' and  <em>webspider</em>'discovery'</li>
  </ul>
-<blockquote> Which file is vulnerable to server side inclusion
+<blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("ssi_filename") %> > What file is vulnerable to server side inclusion [<%= @points["ssi_filename"] %>]
 	<form method="post" action="/answer">
 		<input type="hidden" name="question" value="ssi_filename">
 		<input type="text" name="answer">
@@ -19,7 +19,7 @@ Now that you know how w3af works, use it to figure out which file is vulnerable 
 	Use the include directive (for ssi) and w3af should show you all the files you can include
 </li>
 </ul>
-<blockquote> Where is the secret location?
+<blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("ssi_secret_location") %> > What is the secret location? [<%= @points["ssi_secret_location"] %>]
 	<form method="post" action="/answer">
 		<input type="hidden" name="question" value="ssi_secret_location">
 		<input type="text" name="answer">
@@ -29,7 +29,7 @@ Now that you know how w3af works, use it to figure out which file is vulnerable 
 <p>
 So you found the file that contains the secret location...or so you think.  Remember that SSI is mainly used to include files in an html page.  SSI supports a variety of <a href="http://www.w3.org/Jigsaw/Doc/User/SSI.html#exec">commands</a> that will help you answer this next question. 
 </p>
-<blockquote> Which file actually contains the secret location?
+<blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("ssi_real_filename") %> > What file actually contains the secret location?  [<%= @points["ssi_real_filename"] %>]
 	<form method="post" action="/answer">
 		<input type="hidden" name="question" value="ssi_real_filename">
 		<input type="text" name="answer">

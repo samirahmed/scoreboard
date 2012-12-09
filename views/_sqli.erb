@@ -28,7 +28,7 @@ union-check             check for UNION sql injection
 <li>Use <b>dump &lt;table&gt; [db]</b> to dump the table</li>
 </ul>
 <pre>
-Database: securelab
+Database: my_database
 Table: users
 [1 entry]
 +---------------+----------------------------------+----+
@@ -41,28 +41,28 @@ Table: users
 <li>What type of passwords are these? Can you crack them (hint: they are not salted)?</li>
 <li>Try cracking them using <em>John the Ripper</em> or <a href="http://crackstation.net">crackstation.net</a></li>
 </ul>
-<blockquote> What is the name of the database
+<blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("db_name") %> > What is the name of the database [<%= @points["db_name"] %>]
 	<form method="post" action="/answer">
 	<input type="hidden" name="question" value="db_name">
 	<input type="text" name="answer">
 	<button type="submit" class="btn btn-danger" >Submit</button>
 </form>
 </blockquote>
-<blockquote> How many tables are in this database
+<blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("table_count") %> >  How many tables are in this database  [<%= @points["table_count"] %>]
 	<form method="post" action="/answer">
 	<input type="hidden" name="question" value="table_count">
 	<input type="text" name="answer">
 	<button type="submit" class="btn btn-danger" >Submit</button>
 </form>
 </blockquote>
-<blockquote> What is the name of the table that has the most characters in its name
-	<form method="post" action="/answer">
+<blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("longest_table_name") %> > What is the name of the table that has the most characters in its name  [<%= @points["longest_table_name"] %>]
+	<form method="post" action="/answer"> 
 	<input type="hidden" name="question" value="longest_table_name">
 	<input type="text" name="answer">
 	<button type="submit" class="btn btn-danger" >Submit</button>
 	</form>
 </blockquote>
-<blockquote> What is James Bonds password?
+<blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("james_bond") %> > What is James Bonds password?  [<%= @points["james_bond"] %>]
 	<form method="post" action="/answer">
 	<input type="hidden" name="question" value="james_bond">
 	<input type="text" name="answer">
