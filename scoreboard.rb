@@ -37,10 +37,11 @@ def get_user
 end
 
 def get_site
+  site_count = 3
   if get_user.nil?
-    ENV["VULNERABLE_SITE_#{rand(2)}"] || "http://www.raxcity.com" 
+    ENV["VULNERABLE_SITE_#{rand(site_count)}"] || "http://www.raxcity.com" 
   else
-    ENV["VULNERABLE_SITE_#{@user.name.to_s.sum%2}"] || "http://www.raxcity.com"
+    ENV["VULNERABLE_SITE_#{@user.name.to_s.sum% site_count}"] || "http://www.raxcity.com"
   end
 end
 
