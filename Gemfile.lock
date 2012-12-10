@@ -65,9 +65,6 @@ GEM
     multi_json (1.4.0)
     multi_xml (0.5.1)
     rack (1.4.1)
-    rack-datamapper-session (0.3)
-      dm-core (>= 0.9.10)
-      rack (>= 1.0)
     rack-protection (1.2.0)
       rack
     rake (10.0.2)
@@ -88,6 +85,5 @@ DEPENDENCIES
   dm-sqlite-adapter
   httparty
   json
-  rack-datamapper-session
   rake
   sinatra

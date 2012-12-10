@@ -1,7 +1,6 @@
 require 'rubygems'
 require 'bundler' 
 require 'rake'
-require 'rack-datamapper-session'
 Bundler.require
 
 enable :sessions
@@ -33,7 +32,7 @@ end
 DataMapper.auto_upgrade!
 
 def get_user
-  return nil if session["user"] == nil
+  return nil if session["user"].nil?
   @user = @user || Competitor.get(session["user"])
 end
 
