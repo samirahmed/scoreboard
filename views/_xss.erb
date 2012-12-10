@@ -14,7 +14,7 @@
 
 <li> Turn off any discovery plugins.  Configure <b>xss</b> “audit” plugin. to find “cross-site-scripting” vulnerability. W3AF should find a few strings that cause cross site scripting<li> 
 
-<li>Craft an xss string that POSTs the cookie data to a listening server. We set one up for you at <a href="http://raxcity.com/sketch/requestbin.php">http://raxcity.com/sketch/requestbin.php</a>.  By simply sending post request here they will be logged and displayed <a href="http://raxcity.com/sketch/log.txt">here</a></li>
+<li>Craft an xss string that POSTs the cookie data to a listening server. We set one up for you at <a href="http://raxcity.com/sketch/<%= @user.name+"/" if not @user.nil? %>requestbin.php">http://raxcity.com/sketch/<%= @user.name+"/" if not @user.nil? %>requestbin.php</a>.  By simply sending post request here they will be logged and displayed <a href="http://raxcity.com/sketch/<%= @user.name+"/" if not @user.nil? %>log.txt">here</a></li>
 </ul>
 
 <p> You can use the snippet of javascript below to help you steal cookies! </p>
