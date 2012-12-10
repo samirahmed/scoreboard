@@ -5,6 +5,7 @@ Now that you know how w3af works, use it to figure out which file is vulnerable 
  <ul>
  <li>Point W3AF to the page <a href="<%=@site%>"><%=@site%></a></li>
  <li>Enable the <em>ssi</em> plugin from the 'audit' plugs  and  <em>webspider</em> in the 'discovery' plugins</li>
+ <li>Click Start</li>
  </ul>
 <blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("ssi_filename") %> > What file is vulnerable to server side inclusion [<%= @points["ssi_filename"] %>]
 	<form method="post" action="/answer">
@@ -14,7 +15,7 @@ Now that you know how w3af works, use it to figure out which file is vulnerable 
 	</form>
 </blockquote>
 <ul>
-<li> Head over to the <b>form.shtml</b> and try displaying the contents of an ssi enabled file</li>
+<li> Head over to the <a href="<%= @site %>/form.shtml">form.shtml</a> and try displaying the contents of an ssi enabled file. You can do this by injecting an SSI command in the input area</li>
 <li>
 	Use the include directive (for ssi) and w3af should show you all the files you can include
 </li>
