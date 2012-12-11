@@ -14,10 +14,17 @@ Now that you know how w3af works, use it to figure out which file is vulnerable 
 		<button type="submit" class="btn btn-danger" >Submit</button>
 	</form>
 </blockquote>
+<p> Head over to the <a href="<%= @site %>/form.shtml">form.shtml</a> and try displaying the contents of an ssi enabled file. You can do this by injecting an SSI command in the input area
+</p>
 <ul>
-<li> Head over to the <a href="<%= @site %>/form.shtml">form.shtml</a> and try displaying the contents of an ssi enabled file. You can do this by injecting an SSI command in the input area</li>
 <li>
-	Use the include directive (for ssi) and w3af should show you all the files you can include
+	SSI supports a variety of <a href="http://www.w3.org/Jigsaw/Doc/User/SSI.html#exec">commands</a> that will help you answer the next two question. 
+</li>
+<li>
+	Try Entering some SSI commands in the form to list the different sites that are available to you.
+</li>
+<li>
+	Use the include directive (for ssi) on one of these sites to find the secret location.
 </li>
 </ul>
 <blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("ssi_secret_location") %> > What is the secret location? [<%= @points["ssi_secret_location"] %>]
@@ -28,8 +35,13 @@ Now that you know how w3af works, use it to figure out which file is vulnerable 
 	</form>
 </blockquote>
 <p>
-So you found the file that contains the secret location...or so you think.  Remember that SSI is mainly used to include files in an html page.  SSI supports a variety of <a href="http://www.w3.org/Jigsaw/Doc/User/SSI.html#exec">commands</a> that will help you answer this next question. 
+So you found the file that contains the secret location...or so you think.  Remember that SSI is mainly used to include files in an html page.  
 </p>
+<ul>
+<li>
+	Now you have the name of secret location. Lets see if you can use that your advantage.
+</li>
+</ul>
 <blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("ssi_real_filename") %> > What file actually contains the secret location?  [<%= @points["ssi_real_filename"] %>]
 	<form method="post" action="/answer">
 		<input type="hidden" name="question" value="ssi_real_filename">
