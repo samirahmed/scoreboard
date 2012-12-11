@@ -61,6 +61,7 @@ task :seed_target, [:number , :address] do |t,args|
 	if active!
 		puts "Setting site#{args[:number]} to #{args[:address]}"
 		Competition.first["site#{args[:number]}"]=args[:address]
+		Competition.save
 	else
 		puts "No Competition Active"
 	end
