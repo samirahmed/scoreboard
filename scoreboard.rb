@@ -25,8 +25,12 @@ end
 
 class Competition
   include DataMapper::Resource
-  property   :id,     Serial
+  property :id,     Serial
   property :active, Boolean, :default => false;
+  property :site1,  String, :default => "http://vulnerable-1.com";
+  property :site2,  String, :default => "http://vulnerable-2.com";
+  property :site3,  String, :default => "http://vulnerable-3.com";
+  property :site4,  String, :default => "http://vulnerable-4.com";
 end
 
 DataMapper.auto_upgrade!
@@ -37,11 +41,12 @@ def get_user
 end
 
 def get_site
-  site_count = 3
-  if get_user.nil?
-    ENV["VULNERABLE_SITE_#{rand(site_count)}"] || "http://www.raxcity.com" 
+  site_count = 4
+  raise "no competition" unless active!
+  if get_user.nil?  
+    Competition.first["site#{rand(1..site_count)}"]
   else
-    ENV["VULNERABLE_SITE_#{@user.name.to_s.sum% site_count}"] || "http://www.raxcity.com"
+    Competition.first["site#{@user.name.to_s.sum% site_count+1}"]
   end
 end
 
@@ -161,7 +166,7 @@ end
 
 get '/admin/disable' do
   protected!
-  Competition.all.destroy
+  Competition.all.each{|c| c.active=false; c.save}
   redirect "/admin"
 end
 
