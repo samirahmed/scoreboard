@@ -60,8 +60,9 @@ task :seed_target, [:number , :address] do |t,args|
 	require './scoreboard'
 	if active!
 		puts "Setting site#{args[:number]} to #{args[:address]}"
-		Competition.first["site#{args[:number]}"]=args[:address]
-		Competition.save
+		c = Competition.first
+		c["site#{args[:number]}"] = args[:address]
+		c.save
 	else
 		puts "No Competition Active"
 	end
