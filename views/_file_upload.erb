@@ -1,4 +1,7 @@
 <h3> Bonus Time! File Vulnerabilites</h3>
+<p>
+	This is the most difficult challenge of them all, so we won't help you too much on this one!
+</p>
  <p>
 	If you haven’t cracked through the hidden pages yet, do that first!
 
@@ -12,10 +15,12 @@
 	</form>
 </blockquote>
  <ul>
- <li>Point the plugin at the target site and run it
+ <li>
+ 	Ah! So you have a plugin, now what info can you get from it?
+ </li>
  </ul>
 <blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("fu_relative_path") %> > 
-What is the folder to which files are uploaded to on this server (relative path based on root of webpage)? [<%= @points["fu_relative_path"] %>]
+What is the folder to which files are uploaded to on this server (relative path based on root of webpage,  ex. <b>http://128.197.127.17/ssi/form.shtml</b> would have the path “/ssi/form.shtml” )? [<%= @points["fu_relative_path"] %>]
 	<form method="post" action="/answer">
 		<input type="hidden" name="question" value="fu_relative_path">
 		<input type="text" name="answer">
@@ -26,7 +31,7 @@ What is the folder to which files are uploaded to on this server (relative path 
 Well, you have a vulnerability, can you attack it with w3af and get a shell?
 </p>
 <p>
-Didn’t think so, this website has some defense against w3af, but if you got to this point, you also know that you can get to the uploaded files and run them on the browser.  Now this is the hard part...
+Didn’t think so, this website has some defenses against w3af, but if you got to this point, you also know that you can get to the uploaded files and run them on the browser (if not, try it out!).  Now this is the hard part,
 </p>
 <blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("fu_flag") %> > Get a shell onto the computer using this vulnerability, and give us the flag located in the motd (HINT: Try to use Prof. Trachtenberg’s preferred way for transferring files to backtrack from the host!) [<%= @points["fu_flag"] %>]
 	<form method="post" action="/answer">
@@ -35,3 +40,6 @@ Didn’t think so, this website has some defense against w3af, but if you got to
 		<button type="submit" class="btn btn-danger" >Submit</button>
 	</form>
 </blockquote>
+<p>
+Great job! You ain't no script kiddie.
+</p>

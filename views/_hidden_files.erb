@@ -6,7 +6,10 @@
  <li>Enable the <em>robotsReader</em> plugin in the 'discovery'</li>
  <li>After running, look at the <em>Results</em> page, there should be a hit for <em>robotsReader</em> 
  </li>
- <li>Look at the robots.txt file and find what is listed after Disallow. This is a directory that invisible to the spiders. The admin however, forgot to hide this directory from the public so point your browser to <b><em><%="#{@site}/&lt;invisible directory name&gt;" %></em></b></li>
+ <li>Look at the output from w3af - there are a whole bunch of new pages that were previously hidden. 
+ </li>
+ <li>
+ All of these hidden pages are in a directory that is invisbile to the spiders. The admin however, forgot to hide this directory from the public so point your browser to <b><em><%="#{@site}/&lt;invisible directory name&gt;" %></em></b></li>
  </ul>
 <p>These are all of the files that the admin did not want you to see. Take a look at the html file here.</p>
 <blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("secret_password") %> > What is the super secret password [<%= @points["secret_password"] %>]
@@ -18,7 +21,16 @@
 	</form>
 </blockquote>
 <ul>
-<li> Try using a grep plugin on the hidden folders</li>
+<li>Now try to visit other hidden pages besides the html page</li>
+</ul>
+<p>
+Oh what? You need to log in? Well then, see if the <b>hidden.html</b> has any other info waiting for you.
+</p>
+<p>
+Grep plugins are used for scanning the source code of HTML pages for useful info, they can come in handy for very large webpages.  In this case, try using a grep plugin that looks for username or password keywords. Try using a grep plugin on the hidden.html URL.
+</p>
+<ul>
+<li> Try using a grep plugin on the hidden html</li>
 </ul>
 <blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("important_file") %> > 
 What file does the admin think is 'important'
@@ -30,9 +42,16 @@ What file does the admin think is 'important'
 	</form>
 </blockquote>
 <ul>
-<li> If you found the important file, you will know that it is a binary. But how do you run it? Can you think of a way to run binaries on the server that you learned in another challenge? 
+<li> 
+Well, now you know a binary exists... but to get it to work, you need to get creative with what you have found on the site so far.  
+</li>
+<li>
+Try going to the other challenges until you figure out how to run binary files on the server ( HINT: You need to do some injecting =] )!
 </li>
 </ul>
+<p>
+	You're back? Sweet! So then...
+</p>
 <blockquote <%= "style='border-left-color:palegreen;'" if @completed.include?("admin_password") %> > 
 After running the binary using the server, what is the admin's password for this page?
 [<%= @points["admin_password"] %>]
