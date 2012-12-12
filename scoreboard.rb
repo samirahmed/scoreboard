@@ -141,8 +141,8 @@ post '/answer' do
      logger.info "Errors on Score? #{user.errors.on(:score)}"
      logger.info "Errors on Correct? #{user.errors.on(:correct)}"
      logger.info "User is valid? #{user.valid?}"
-     user.update{:score => new_score}
-     user.update{:correct => new_correct} 
+     user.update(:score => new_score)
+     user.update(:correct => new_correct) 
      puts "The Score is now #{user.score}"
      session["title"] = "CORRECT"
      session["message"]  = "Correct! Your Score is #{user.score.to_s}"
