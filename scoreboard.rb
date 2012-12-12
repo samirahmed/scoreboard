@@ -67,7 +67,7 @@ get "/login" do
     redirect '/'
   else
     session["user"]= user.name
-    session['message'] = "Welcome #{user.name}" 
+    session['message'] = "Click 'TARGET To Explore the Target Site'" 
   end
   redirect "/"
 end
