@@ -137,7 +137,7 @@ post '/answer' do
   if ans.downcase == question.answer.downcase
      logger.info "The Score was #{user.score}"
      new_score = user.score + question.points
-     new_correct = JSON.dump(answered.push(qid))
+     new_correct = JSON.dump(answered.push(qid)).to_s
      logger.info "Errors on Score? #{user.errors.on(:score)}"
      logger.info "Errors on Correct? #{user.errors.on(:correct)}"
      logger.info "User is valid? #{user.valid?}"
