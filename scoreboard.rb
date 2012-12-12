@@ -11,7 +11,7 @@ class Competitor
   include DataMapper::Resource
   property :name,        String,  :key => true
   property :score,       Integer, :default => 0
-  property :correct,     String,  :default => "[]"
+  property :correct,     Text,  :default => "[]"
   property :created_at,  DateTime
   property :updated_at,  DateTime
 end
