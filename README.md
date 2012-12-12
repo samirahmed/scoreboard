@@ -36,3 +36,10 @@ All the code is in scoreboard.rb
 ### Future
 
 I don't plan to use this again ... this is just hosted openly here for others to use for their CTFs as a reference
+
+## Results
+
+Here are the results from the competition incase you are interested
+
+![Questions](http://i.imgur.com/RyK7I.png)
+![Questions](http://i.imgur.com/rHQm4.png)
